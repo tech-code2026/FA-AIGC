@@ -1,0 +1,870 @@
+// Code generated - DO NOT EDIT.
+// This file is a generated binding and any manual changes will be lost.
+
+package contract
+
+import (
+	"errors"
+	"math/big"
+	"strings"
+
+	ethereum "github.com/ethereum/go-ethereum"
+	"github.com/ethereum/go-ethereum/accounts/abi"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/ethereum/go-ethereum/event"
+)
+
+// Reference imports to suppress errors if they are not otherwise used.
+var (
+	_ = errors.New
+	_ = big.NewInt
+	_ = strings.NewReader
+	_ = ethereum.NotFound
+	_ = bind.Bind
+	_ = common.Big1
+	_ = types.BloomLookup
+	_ = event.NewSubscription
+	_ = abi.ConvertType
+)
+
+// VerificationG1Point is an auto generated low-level Go binding around an user-defined struct.
+type VerificationG1Point struct {
+	X *big.Int
+	Y *big.Int
+}
+
+// VerificationG2Point is an auto generated low-level Go binding around an user-defined struct.
+type VerificationG2Point struct {
+	X [2]*big.Int
+	Y [2]*big.Int
+}
+
+// ContractMetaData contains all meta data concerning the Contract contract.
+var ContractMetaData = &bind.MetaData{
+	ABI: "[{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"pip\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"sigma\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"structVerification.G2Point\",\"name\":\"u2\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"exp\",\"type\":\"uint256\"}],\"name\":\"AIGCForen\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point[]\",\"name\":\"sigmaShares\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"structVerification.G2Point[]\",\"name\":\"cpk2Shares\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"structVerification.G2Point\",\"name\":\"cpk2\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"req\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"sigma\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"hashPointG1\",\"type\":\"tuple\"}],\"name\":\"AIGCReg\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"hashPointG1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"req2\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"T\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"S\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"structVerification.G2Point[]\",\"name\":\"cpk2Shares\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point[]\",\"name\":\"K\",\"type\":\"tuple[]\"}],\"name\":\"AIGCReq\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"hashPointG1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"req\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"T\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"S\",\"type\":\"uint256\"}],\"name\":\"CopyReq\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"GetAIGCForen\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"GetAIGCRegVerRes\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"GetAIGCReqVerRes\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"GetCopyReqVerRes\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"GetTraceVerRes\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"GetTransferVerRes\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MDA_i\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"Cpk1\",\"type\":\"tuple\"},{\"internalType\":\"uint256[]\",\"name\":\"sxShares\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"I\",\"type\":\"uint256[]\"}],\"name\":\"Trace\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point[]\",\"name\":\"piShares\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256\",\"name\":\"sx\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"Cpk1\",\"type\":\"tuple\"},{\"internalType\":\"uint256[]\",\"name\":\"I\",\"type\":\"uint256[]\"}],\"name\":\"TraceVer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point[]\",\"name\":\"commitment\",\"type\":\"tuple[]\"}],\"name\":\"UploadCommitment\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"n\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"}],\"name\":\"UploadGPar\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"a1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"a2\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"}],\"name\":\"UploadProof\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"nta\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"reqp\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"commitment0\",\"type\":\"tuple\"}],\"name\":\"UploadTransfer\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"hashPointG1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"T\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"S\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"X\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"g2k\",\"type\":\"tuple\"}],\"name\":\"VerifyTransfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"a\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"b\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"r\",\"type\":\"uint256\"}],\"name\":\"modInverse\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"p\",\"type\":\"tuple\"}],\"name\":\"negate\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"I\",\"type\":\"uint256[]\"}],\"name\":\"precomputeLagCoef\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"I\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"shares\",\"type\":\"uint256[]\"}],\"name\":\"recon\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"I\",\"type\":\"uint256[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point[]\",\"name\":\"shares\",\"type\":\"tuple[]\"}],\"name\":\"reconG1\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"structVerification.G1Point\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	Bin: "0x60016080819052600260a08190526000829055908190557f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c26101009081527f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed6101205260c08181526101806040527f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b6101409081527f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa6101605260e0529190620000cc908290816200010a565b506020820151620000e490600280840191906200010a565b5050506032600655600660075560036008553480156200010357600080fd5b5062000164565b82600281019282156200013b579160200282015b828111156200013b5782518255916020019190600101906200011e565b50620001499291506200014d565b5090565b5b808211156200014957600081556001016200014e565b61242f80620001746000396000f3fe6080604052600436106101665760003560e01c8063a25702a6116100d1578063ce17d9831161008a578063e43990ac11610064578063e43990ac146103c4578063e6f93b22146103d9578063f73a9452146103f2578063fb6b9e9a1461042657600080fd5b8063ce17d98314610383578063d295d51514610396578063d4c7f360146103ac57600080fd5b8063a25702a6146102b6578063b1d03cd0146102f1578063becacea414610304578063c39fd46d1461031c578063c50d9ab71461033c578063cd223d751461034f57600080fd5b80634df7e3d0116101235780634df7e3d01461022557806374c7cddb1461023b5780637fe5c78b146102505780638cd019021461026357806395943060146102765780639cfcf7111461028957600080fd5b806305964c761461016b5780630dbe671f146101945780630ebe60cb146101b857806312830fee146101d85780631c0561e0146101f05780634bb1b89714610212575b600080fd5b34801561017757600080fd5b50600c5460ff165b60405190151581526020015b60405180910390f35b3480156101a057600080fd5b506101aa60075481565b60405190815260200161018b565b3480156101c457600080fd5b506101aa6101d3366004611a53565b610439565b3480156101e457600080fd5b5060165460ff1661017f565b3480156101fc57600080fd5b506102056104e5565b60405161018b9190611a6c565b61017f610220366004611bd5565b61055d565b34801561023157600080fd5b506101aa60085481565b61024e610249366004611d20565b61061e565b005b61024e61025e366004611dc2565b610847565b61017f610271366004611dfe565b6108ac565b61024e610284366004611e61565b610a58565b34801561029557600080fd5b506102a96102a4366004611f67565b610c94565b60405161018b9190611f9b565b3480156102c257600080fd5b506102d66102d1366004611fd3565b610eb0565b6040805182518152602092830151928101929092520161018b565b6101aa6102ff366004612036565b610fee565b34801561031057600080fd5b50601d5460ff1661017f565b34801561032857600080fd5b506101aa6103373660046120aa565b61105c565b61017f61034a366004612103565b61115f565b61024e61035d366004612181565b825160105560209283015160115581516012559082015160135580516014550151601555565b61017f6103913660046121c7565b6111c8565b3480156103a257600080fd5b506101aa60065481565b3480156103b857600080fd5b50600f5460ff1661017f565b3480156103d057600080fd5b50610205611245565b61024e6103e7366004612215565b600991909155600a55565b61024e610400366004612237565b835160175560209384015160185582516019559190920151601a55601b91909155601c55565b6102d661043436600461227b565b6112a1565b6000808211801561045757506000805160206123da83398151915282105b6104a85760405162461bcd60e51b815260206004820152601960248201527f496e76616c6964207220666f72206d6f6420696e76657273650000000000000060448201526064015b60405180910390fd5b60006104c360026000805160206123da8339815191526122ad565b90506104de83826000805160206123da83398151915261135b565b9392505050565b6060600d80548060200260200160405190810160405280929190818152602001828054801561055357602002820191906000526020600020906000905b825461010083900a900460ff1615158152602060019283018181049485019490930390920291018084116105225790505b5050505050905090565b60008061056a85846113b8565b90506105ed818561057a896112a1565b6040805160808101808352909160029183918201908390819081845b81548152602001906001019080831161059657505050918352505060408051808201918290526020909201919060028481019182845b8154815260200190600101908083116105cc5750505050508152505061145c565b61060057600f805460ff1916905561060e565b600f805460ff191660011790555b5050600f5460ff16949350505050565b600061062b878787611567565b9050600061063988866113b8565b905060006106508761064b8a866113b8565b611626565b8051835191925014801561066b575080602001518260200151145b156106b057600d8054600181018255600091909152602081046000805160206123ba83398151915201805460ff601f9093166101000a928302191690911790556106e9565b600d80546001810182556000919091526000805160206123ba83398151915260208204018054601f9092166101000a60ff021990911690555b60005b600a5481101561083b576107ac85828151811061070b5761070b6122c0565b60209081029190910101516040805160808101808352909160029183918201908390819081845b81548152602001906001019080831161073257505050918352505060408051808201918290526020909201919060028481019182845b8154815260200190600101908083116107685750505050508152505061078d8c6112a1565b89858151811061079f5761079f6122c0565b602002602001015161145c565b6107ed57600d80546001810182556000919091526000805160206123ba83398151915260208204018054601f9092166101000a60ff02199091169055610829565b600d8054600181018255600091909152602081046000805160206123ba83398151915201805460ff601f9093166101000a928302191690911790555b80610833816122d6565b9150506106ec565b50505050505050505050565b60005b81518110156108a857600b828281518110610867576108676122c0565b6020908102919091018101518254600181810185556000948552938390208251600290920201908155910151910155806108a0816122d6565b91505061084a565b5050565b604080518082019091526012548152601354602082015260009081906108d490889088611567565b905060006108e288876113b8565b604080518082019091526012548152601354602082015290915060009061090f90899061064b90866113b8565b8051835191925014158061092b57508060200151826020015114155b156109465750506016805460ff191690555060009050610a4f565b6040805180820190915260105481526011546020820152601c5460009161096c916113b8565b9050600061097f886017600401546113b8565b604080518082019091526000805482526001546020830152601c54929350916109a891906113b8565b905060006109bb896017600401546113b8565b905060006109c98585611626565b905060006109d78484611626565b82516017549192501415806109f25750602082015160185414155b80610a005750805160195414155b80610a1157506020810151601a5414155b15610a335750506016805460ff191690555060009650610a4f95505050505050565b50506016805460ff191660019081179091559750505050505050505b95945050505050565b60005b600a54811015610b8b57610afc878281518110610a7a57610a7a6122c0565b60209081029190910101516040805160808101808352909160029183918201908390819081845b815481526020019060010190808311610aa157505050918352505060408051808201918290526020909201919060028481019182845b815481526020019060010190808311610ad75750505050508152505061078d876112a1565b610b3d57600e805460018101825560009190915260008051602061239a83398151915260208204018054601f9092166101000a60ff02199091169055610b79565b600e80546001810182556000919091526020810460008051602061239a83398151915201805460ff601f9093166101000a928302191690911790555b80610b83816122d6565b915050610a5b565b506040805160808101808352610c0f928592916002918391908201908390819081845b815481526020019060010190808311610bae57505050918352505060408051808201918290526020909201919060028481019182845b815481526020019060010190808311610be457505050505081525050610c09846112a1565b8761145c565b610c5057600e805460018101825560009190915260008051602061239a83398151915260208204018054601f9092166101000a60ff02199091169055610c8c565b600e80546001810182556000919091526020810460008051602061239a83398151915201805460ff601f9093166101000a928302191690911790555b505050505050565b606060096001015482511015610cfc5760405162461bcd60e51b815260206004820152602760248201527f6e6f7420656e6f7567682073686172657320746f207265636f76657220746865604482015266081cd958dc995d60ca1b606482015260840161049f565b600082516001600160401b03811115610d1757610d17611ab2565b604051908082528060200260200182016040528015610d40578160200160208202803683370190505b50905060005b8351811015610ea9576000848281518110610d6357610d636122c0565b60200260200101516001610d7791906122ef565b9050600160005b8651811015610e7457808414610e62576000878281518110610da257610da26122c0565b60200260200101516001610db691906122ef565b90506000610dd26000805160206123da83398151915283612318565b610dea906000805160206123da8339815191526122ad565b90506000828610610e0657610dff83876122ad565b9050610e2b565b610e1086846122ad565b610e28906000805160206123da8339815191526122ad565b90505b610e3481610439565b90506000805160206123da83398151915282860994506000805160206123da83398151915281860994505050505b80610e6c816122d6565b915050610d7e565b5080848481518110610e8857610e886122c0565b60200260200101818152505050508080610ea1906122d6565b915050610d46565b5092915050565b60408051808201909152600080825260208201526000835111610f105760405162461bcd60e51b8152602060048201526018602482015277139bc81cda185c995cc81d1bc81c9958dbdb9cdd1c9d58dd60421b604482015260640161049f565b6000610f1b84610c94565b905060006040518060400160405280600081526020016000815250905060005b8551811015610fe3576000868281518110610f5857610f586122c0565b602002602001015190506000610fa0878381518110610f7957610f796122c0565b6020026020010151868581518110610f9357610f936122c0565b60200260200101516113b8565b8451909150158015610fb457506020840151155b15610fc157809350610fce565b610fcb8482611626565b93505b50508080610fdb906122d6565b915050610f3b565b509150505b92915050565b600080610ffb838561105c565b905061101a604051806040016040528060008152602001600081525090565b60005b6009548110156110515761103d87878381518110610f9357610f936122c0565b915080611049816122d6565b91505061101d565b509095945050505050565b6000808351116110a95760405162461bcd60e51b8152602060048201526018602482015277139bc81cda185c995cc81d1bc81c9958dbdb9cdd1c9d58dd60421b604482015260640161049f565b60006110b484610c94565b90506000805b8551811015610fe35760008682815181106110d7576110d76122c0565b6020026020010151905060006000805160206123da833981519152806110ff576110ff612302565b858481518110611111576111116122c0565b602002602001015188848151811061112b5761112b6122c0565b60200260200101510990506000805160206123da833981519152818508935050508080611157906122d6565b9150506110ba565b60008061116c84866113b8565b9050600061117a8488610eb0565b80518351919250148015611195575080602001518260200151145b156111ac57601d805460ff191660011790556111b7565b601d805460ff191690555b5050601d5460ff1695945050505050565b6000806111d6868686611567565b905060006111e487856113b8565b905060006111f68661064b89866113b8565b80518351919250148015611211575080602001518260200151145b1561122857600c805460ff19166001179055611233565b600c805460ff191690555b5050600c5460ff169695505050505050565b6060600e805480602002602001604051908101604052809291908181526020018280548015610553576000918252602091829020805460ff16151584529082028301929091600191018084116105225790505050505050905090565b604080518082019091526000808252602082015281511580156112c657506020820151155b156112e4575050604080518082019091526000808252602082015290565b6040518060400160405280836000015181526020017f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4784602001516113299190612318565b611353907f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd476122ad565b905292915050565b600080611366611998565b61136e6119b6565b602080825281810181905260408201819052606082018890526080820187905260a082018690528260c08360056107d05a03fa9250826113ad57600080fd5b505195945050505050565b60408051808201909152600080825260208201526113d46119d4565b835181526020808501519082015260408101839052600060608360808460076107d05a03fa9050806114545760405162461bcd60e51b8152602060048201526024808201527f656c6c6970746963206375727665206d756c7469706c69636174696f6e2066616044820152631a5b195960e21b606482015260840161049f565b505092915050565b60408051600280825260608201909252600091829190816020015b60408051808201909152600080825260208201528152602001906001900390816114775750506040805160028082526060820190925291925060009190602082015b6114c16119f2565b8152602001906001900390816114b957905050905086826000815181106114ea576114ea6122c0565b60200260200101819052508482600181518110611509576115096122c0565b60200260200101819052508581600081518110611528576115286122c0565b60200260200101819052508381600181518110611547576115476122c0565b602002602001018190525061155c82826116c1565b979650505050505050565b82516020808501518451858301518551868501516040805196870197909752958501939093526060840191909152608083015260a082015260c0810191909152600090819060029060e00160408051601f19818403018152908290526115cc9161233a565b602060405180830381855afa1580156115e9573d6000803e3d6000fd5b5050506040513d601f19601f8201168201806040525081019061160c9190612369565b9050610a4f6000805160206123da83398151915282612318565b6040805180820190915260008082526020820152611642611a17565b8351815260208085015181830152835160408301528301516060808301919091526000908360c08460066107d05a03fa9050806114545760405162461bcd60e51b815260206004820152601e60248201527f656c6c6970746963206375727665206164646974696f6e206661696c65640000604482015260640161049f565b600081518351146116d157600080fd5b825160006116e0826006612382565b90506000816001600160401b038111156116fc576116fc611ab2565b604051908082528060200260200182016040528015611725578160200160208202803683370190505b50905060005b8381101561196057868181518110611745576117456122c0565b6020026020010151600001518282600661175f9190612382565b61176a9060006122ef565b8151811061177a5761177a6122c0565b602002602001018181525050868181518110611798576117986122c0565b602002602001015160200151828260066117b29190612382565b6117bd9060016122ef565b815181106117cd576117cd6122c0565b6020026020010181815250508581815181106117eb576117eb6122c0565b6020908102919091010151515182611804836006612382565b61180f9060026122ef565b8151811061181f5761181f6122c0565b60200260200101818152505085818151811061183d5761183d6122c0565b60209081029190910181015151015182611858836006612382565b6118639060036122ef565b81518110611873576118736122c0565b602002602001018181525050858181518110611891576118916122c0565b6020026020010151602001516000600281106118af576118af6122c0565b6020020151826118c0836006612382565b6118cb9060046122ef565b815181106118db576118db6122c0565b6020026020010181815250508581815181106118f9576118f96122c0565b602002602001015160200151600160028110611917576119176122c0565b602002015182611928836006612382565b6119339060056122ef565b81518110611943576119436122c0565b602090810291909101015280611958816122d6565b91505061172b565b50611969611998565b6000602082602086026020860160086107d05a03fa90508061198a57600080fd5b505115159695505050505050565b60405180602001604052806001906020820280368337509192915050565b6040518060c001604052806006906020820280368337509192915050565b60405180606001604052806003906020820280368337509192915050565b6040518060400160405280611a05611a35565b8152602001611a12611a35565b905290565b60405180608001604052806004906020820280368337509192915050565b60405180604001604052806002906020820280368337509192915050565b600060208284031215611a6557600080fd5b5035919050565b6020808252825182820181905260009190848201906040850190845b81811015611aa6578351151583529284019291840191600101611a88565b50909695505050505050565b634e487b7160e01b600052604160045260246000fd5b604080519081016001600160401b0381118282101715611aea57611aea611ab2565b60405290565b604051601f8201601f191681016001600160401b0381118282101715611b1857611b18611ab2565b604052919050565b600060408284031215611b3257600080fd5b611b3a611ac8565b9050813581526020820135602082015292915050565b600082601f830112611b6157600080fd5b611b69611ac8565b806040840185811115611b7b57600080fd5b845b81811015611051578035845260209384019301611b7d565b600060808284031215611ba757600080fd5b611baf611ac8565b9050611bbb8383611b50565b8152611bca8360408401611b50565b602082015292915050565b6000806000806101208587031215611bec57600080fd5b611bf68686611b20565b9350611c058660408701611b20565b9250611c148660808701611b95565b939692955092936101000135925050565b60006001600160401b03821115611c3e57611c3e611ab2565b5060051b60200190565b600082601f830112611c5957600080fd5b81356020611c6e611c6983611c25565b611af0565b82815260079290921b84018101918181019086841115611c8d57600080fd5b8286015b84811015611cb157611ca38882611b95565b835291830191608001611c91565b509695505050505050565b600082601f830112611ccd57600080fd5b81356020611cdd611c6983611c25565b82815260069290921b84018101918181019086841115611cfc57600080fd5b8286015b84811015611cb157611d128882611b20565b835291830191604001611d00565b6000806000806000806101208789031215611d3a57600080fd5b611d448888611b20565b9550611d538860408901611b20565b9450611d628860808901611b20565b935060c0870135925060e08701356001600160401b0380821115611d8557600080fd5b611d918a838b01611c48565b9350610100890135915080821115611da857600080fd5b50611db589828a01611cbc565b9150509295509295509295565b600060208284031215611dd457600080fd5b81356001600160401b03811115611dea57600080fd5b611df684828501611cbc565b949350505050565b60008060008060006101208688031215611e1757600080fd5b611e218787611b20565b9450611e308760408801611b20565b935060808601359250611e468760a08801611b20565b9150611e558760e08801611b20565b90509295509295909350565b6000806000806000806101808789031215611e7b57600080fd5b86356001600160401b0380821115611e9257600080fd5b611e9e8a838b01611cbc565b97506020890135915080821115611eb457600080fd5b50611ec189828a01611c48565b955050611ed18860408901611b95565b9350611ee08860c08901611b20565b9250611ef0886101008901611b20565b9150611f00886101408901611b20565b90509295509295509295565b600082601f830112611f1d57600080fd5b81356020611f2d611c6983611c25565b82815260059290921b84018101918181019086841115611f4c57600080fd5b8286015b84811015611cb15780358352918301918301611f50565b600060208284031215611f7957600080fd5b81356001600160401b03811115611f8f57600080fd5b611df684828501611f0c565b6020808252825182820181905260009190848201906040850190845b81811015611aa657835183529284019291840191600101611fb7565b60008060408385031215611fe657600080fd5b82356001600160401b0380821115611ffd57600080fd5b61200986838701611f0c565b9350602085013591508082111561201f57600080fd5b5061202c85828601611cbc565b9150509250929050565b60008060006080848603121561204b57600080fd5b6120558585611b20565b925060408401356001600160401b038082111561207157600080fd5b61207d87838801611f0c565b9350606086013591508082111561209357600080fd5b506120a086828701611f0c565b9150509250925092565b600080604083850312156120bd57600080fd5b82356001600160401b03808211156120d457600080fd5b6120e086838701611f0c565b935060208501359150808211156120f657600080fd5b5061202c85828601611f0c565b60008060008060a0858703121561211957600080fd5b84356001600160401b038082111561213057600080fd5b61213c88838901611cbc565b9550602087013594506121528860408901611b20565b9350608087013591508082111561216857600080fd5b5061217587828801611f0c565b91505092959194509250565b600080600060c0848603121561219657600080fd5b6121a08585611b20565b92506121af8560408601611b20565b91506121be8560808601611b20565b90509250925092565b60008060008060e085870312156121dd57600080fd5b6121e78686611b20565b93506121f68660408701611b20565b92506122058660808701611b20565b9396929550929360c00135925050565b6000806040838503121561222857600080fd5b50508035926020909101359150565b60008060008060c0858703121561224d57600080fd5b6122578686611b20565b93506122668660408701611b20565b939693955050505060808201359160a0013590565b60006040828403121561228d57600080fd5b6104de8383611b20565b634e487b7160e01b600052601160045260246000fd5b81810381811115610fe857610fe8612297565b634e487b7160e01b600052603260045260246000fd5b6000600182016122e8576122e8612297565b5060010190565b80820180821115610fe857610fe8612297565b634e487b7160e01b600052601260045260246000fd5b60008261233557634e487b7160e01b600052601260045260246000fd5b500690565b6000825160005b8181101561235b5760208186018101518583015201612341565b506000920191825250919050565b60006020828403121561237b57600080fd5b5051919050565b8082028115828204841417610fe857610fe861229756febb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fdd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1eb530644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001a2646970667358221220da8b9d0c13877fe4afffaea755c700ecf589b1c2d3cbc55411ae446d00e1c70e64736f6c63430008140033",
+}
+
+// ContractABI is the input ABI used to generate the binding from.
+// Deprecated: Use ContractMetaData.ABI instead.
+var ContractABI = ContractMetaData.ABI
+
+// ContractBin is the compiled bytecode used for deploying new contracts.
+// Deprecated: Use ContractMetaData.Bin instead.
+var ContractBin = ContractMetaData.Bin
+
+// DeployContract deploys a new Ethereum contract, binding an instance of Contract to it.
+func DeployContract(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *Contract, error) {
+	parsed, err := ContractMetaData.GetAbi()
+	if err != nil {
+		return common.Address{}, nil, nil, err
+	}
+	if parsed == nil {
+		return common.Address{}, nil, nil, errors.New("GetABI returned nil")
+	}
+
+	address, tx, contract, err := bind.DeployContract(auth, *parsed, common.FromHex(ContractBin), backend)
+	if err != nil {
+		return common.Address{}, nil, nil, err
+	}
+	return address, tx, &Contract{ContractCaller: ContractCaller{contract: contract}, ContractTransactor: ContractTransactor{contract: contract}, ContractFilterer: ContractFilterer{contract: contract}}, nil
+}
+
+// Contract is an auto generated Go binding around an Ethereum contract.
+type Contract struct {
+	ContractCaller     // Read-only binding to the contract
+	ContractTransactor // Write-only binding to the contract
+	ContractFilterer   // Log filterer for contract events
+}
+
+// ContractCaller is an auto generated read-only Go binding around an Ethereum contract.
+type ContractCaller struct {
+	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+}
+
+// ContractTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type ContractTransactor struct {
+	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+}
+
+// ContractFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type ContractFilterer struct {
+	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+}
+
+// ContractSession is an auto generated Go binding around an Ethereum contract,
+// with pre-set call and transact options.
+type ContractSession struct {
+	Contract     *Contract         // Generic contract binding to set the session for
+	CallOpts     bind.CallOpts     // Call options to use throughout this session
+	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
+}
+
+// ContractCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// with pre-set call options.
+type ContractCallerSession struct {
+	Contract *ContractCaller // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts   // Call options to use throughout this session
+}
+
+// ContractTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// with pre-set transact options.
+type ContractTransactorSession struct {
+	Contract     *ContractTransactor // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts   // Transaction auth options to use throughout this session
+}
+
+// ContractRaw is an auto generated low-level Go binding around an Ethereum contract.
+type ContractRaw struct {
+	Contract *Contract // Generic contract binding to access the raw methods on
+}
+
+// ContractCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type ContractCallerRaw struct {
+	Contract *ContractCaller // Generic read-only contract binding to access the raw methods on
+}
+
+// ContractTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type ContractTransactorRaw struct {
+	Contract *ContractTransactor // Generic write-only contract binding to access the raw methods on
+}
+
+// NewContract creates a new instance of Contract, bound to a specific deployed contract.
+func NewContract(address common.Address, backend bind.ContractBackend) (*Contract, error) {
+	contract, err := bindContract(address, backend, backend, backend)
+	if err != nil {
+		return nil, err
+	}
+	return &Contract{ContractCaller: ContractCaller{contract: contract}, ContractTransactor: ContractTransactor{contract: contract}, ContractFilterer: ContractFilterer{contract: contract}}, nil
+}
+
+// NewContractCaller creates a new read-only instance of Contract, bound to a specific deployed contract.
+func NewContractCaller(address common.Address, caller bind.ContractCaller) (*ContractCaller, error) {
+	contract, err := bindContract(address, caller, nil, nil)
+	if err != nil {
+		return nil, err
+	}
+	return &ContractCaller{contract: contract}, nil
+}
+
+// NewContractTransactor creates a new write-only instance of Contract, bound to a specific deployed contract.
+func NewContractTransactor(address common.Address, transactor bind.ContractTransactor) (*ContractTransactor, error) {
+	contract, err := bindContract(address, nil, transactor, nil)
+	if err != nil {
+		return nil, err
+	}
+	return &ContractTransactor{contract: contract}, nil
+}
+
+// NewContractFilterer creates a new log filterer instance of Contract, bound to a specific deployed contract.
+func NewContractFilterer(address common.Address, filterer bind.ContractFilterer) (*ContractFilterer, error) {
+	contract, err := bindContract(address, nil, nil, filterer)
+	if err != nil {
+		return nil, err
+	}
+	return &ContractFilterer{contract: contract}, nil
+}
+
+// bindContract binds a generic wrapper to an already deployed contract.
+func bindContract(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := ContractMetaData.GetAbi()
+	if err != nil {
+		return nil, err
+	}
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
+}
+
+// Call invokes the (constant) contract method with params as input values and
+// sets the output to result. The result type might be a single field for simple
+// returns, a slice of interfaces for anonymous returns and a struct for named
+// returns.
+func (_Contract *ContractRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Contract.Contract.ContractCaller.contract.Call(opts, result, method, params...)
+}
+
+// Transfer initiates a plain transaction to move funds to the contract, calling
+// its default method if one is available.
+func (_Contract *ContractRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Contract.Contract.ContractTransactor.contract.Transfer(opts)
+}
+
+// Transact invokes the (paid) contract method with params as input values.
+func (_Contract *ContractRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Contract.Contract.ContractTransactor.contract.Transact(opts, method, params...)
+}
+
+// Call invokes the (constant) contract method with params as input values and
+// sets the output to result. The result type might be a single field for simple
+// returns, a slice of interfaces for anonymous returns and a struct for named
+// returns.
+func (_Contract *ContractCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Contract.Contract.contract.Call(opts, result, method, params...)
+}
+
+// Transfer initiates a plain transaction to move funds to the contract, calling
+// its default method if one is available.
+func (_Contract *ContractTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Contract.Contract.contract.Transfer(opts)
+}
+
+// Transact invokes the (paid) contract method with params as input values.
+func (_Contract *ContractTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Contract.Contract.contract.Transact(opts, method, params...)
+}
+
+// GetAIGCForen is a free data retrieval call binding the contract method 0xd4c7f360.
+//
+// Solidity: function GetAIGCForen() view returns(bool)
+func (_Contract *ContractCaller) GetAIGCForen(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "GetAIGCForen")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// GetAIGCForen is a free data retrieval call binding the contract method 0xd4c7f360.
+//
+// Solidity: function GetAIGCForen() view returns(bool)
+func (_Contract *ContractSession) GetAIGCForen() (bool, error) {
+	return _Contract.Contract.GetAIGCForen(&_Contract.CallOpts)
+}
+
+// GetAIGCForen is a free data retrieval call binding the contract method 0xd4c7f360.
+//
+// Solidity: function GetAIGCForen() view returns(bool)
+func (_Contract *ContractCallerSession) GetAIGCForen() (bool, error) {
+	return _Contract.Contract.GetAIGCForen(&_Contract.CallOpts)
+}
+
+// GetAIGCRegVerRes is a free data retrieval call binding the contract method 0xe43990ac.
+//
+// Solidity: function GetAIGCRegVerRes() view returns(bool[])
+func (_Contract *ContractCaller) GetAIGCRegVerRes(opts *bind.CallOpts) ([]bool, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "GetAIGCRegVerRes")
+
+	if err != nil {
+		return *new([]bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]bool)).(*[]bool)
+
+	return out0, err
+
+}
+
+// GetAIGCRegVerRes is a free data retrieval call binding the contract method 0xe43990ac.
+//
+// Solidity: function GetAIGCRegVerRes() view returns(bool[])
+func (_Contract *ContractSession) GetAIGCRegVerRes() ([]bool, error) {
+	return _Contract.Contract.GetAIGCRegVerRes(&_Contract.CallOpts)
+}
+
+// GetAIGCRegVerRes is a free data retrieval call binding the contract method 0xe43990ac.
+//
+// Solidity: function GetAIGCRegVerRes() view returns(bool[])
+func (_Contract *ContractCallerSession) GetAIGCRegVerRes() ([]bool, error) {
+	return _Contract.Contract.GetAIGCRegVerRes(&_Contract.CallOpts)
+}
+
+// GetAIGCReqVerRes is a free data retrieval call binding the contract method 0x1c0561e0.
+//
+// Solidity: function GetAIGCReqVerRes() view returns(bool[])
+func (_Contract *ContractCaller) GetAIGCReqVerRes(opts *bind.CallOpts) ([]bool, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "GetAIGCReqVerRes")
+
+	if err != nil {
+		return *new([]bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]bool)).(*[]bool)
+
+	return out0, err
+
+}
+
+// GetAIGCReqVerRes is a free data retrieval call binding the contract method 0x1c0561e0.
+//
+// Solidity: function GetAIGCReqVerRes() view returns(bool[])
+func (_Contract *ContractSession) GetAIGCReqVerRes() ([]bool, error) {
+	return _Contract.Contract.GetAIGCReqVerRes(&_Contract.CallOpts)
+}
+
+// GetAIGCReqVerRes is a free data retrieval call binding the contract method 0x1c0561e0.
+//
+// Solidity: function GetAIGCReqVerRes() view returns(bool[])
+func (_Contract *ContractCallerSession) GetAIGCReqVerRes() ([]bool, error) {
+	return _Contract.Contract.GetAIGCReqVerRes(&_Contract.CallOpts)
+}
+
+// GetCopyReqVerRes is a free data retrieval call binding the contract method 0x05964c76.
+//
+// Solidity: function GetCopyReqVerRes() view returns(bool)
+func (_Contract *ContractCaller) GetCopyReqVerRes(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "GetCopyReqVerRes")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// GetCopyReqVerRes is a free data retrieval call binding the contract method 0x05964c76.
+//
+// Solidity: function GetCopyReqVerRes() view returns(bool)
+func (_Contract *ContractSession) GetCopyReqVerRes() (bool, error) {
+	return _Contract.Contract.GetCopyReqVerRes(&_Contract.CallOpts)
+}
+
+// GetCopyReqVerRes is a free data retrieval call binding the contract method 0x05964c76.
+//
+// Solidity: function GetCopyReqVerRes() view returns(bool)
+func (_Contract *ContractCallerSession) GetCopyReqVerRes() (bool, error) {
+	return _Contract.Contract.GetCopyReqVerRes(&_Contract.CallOpts)
+}
+
+// GetTraceVerRes is a free data retrieval call binding the contract method 0xbecacea4.
+//
+// Solidity: function GetTraceVerRes() view returns(bool)
+func (_Contract *ContractCaller) GetTraceVerRes(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "GetTraceVerRes")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// GetTraceVerRes is a free data retrieval call binding the contract method 0xbecacea4.
+//
+// Solidity: function GetTraceVerRes() view returns(bool)
+func (_Contract *ContractSession) GetTraceVerRes() (bool, error) {
+	return _Contract.Contract.GetTraceVerRes(&_Contract.CallOpts)
+}
+
+// GetTraceVerRes is a free data retrieval call binding the contract method 0xbecacea4.
+//
+// Solidity: function GetTraceVerRes() view returns(bool)
+func (_Contract *ContractCallerSession) GetTraceVerRes() (bool, error) {
+	return _Contract.Contract.GetTraceVerRes(&_Contract.CallOpts)
+}
+
+// GetTransferVerRes is a free data retrieval call binding the contract method 0x12830fee.
+//
+// Solidity: function GetTransferVerRes() view returns(bool)
+func (_Contract *ContractCaller) GetTransferVerRes(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "GetTransferVerRes")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// GetTransferVerRes is a free data retrieval call binding the contract method 0x12830fee.
+//
+// Solidity: function GetTransferVerRes() view returns(bool)
+func (_Contract *ContractSession) GetTransferVerRes() (bool, error) {
+	return _Contract.Contract.GetTransferVerRes(&_Contract.CallOpts)
+}
+
+// GetTransferVerRes is a free data retrieval call binding the contract method 0x12830fee.
+//
+// Solidity: function GetTransferVerRes() view returns(bool)
+func (_Contract *ContractCallerSession) GetTransferVerRes() (bool, error) {
+	return _Contract.Contract.GetTransferVerRes(&_Contract.CallOpts)
+}
+
+// MDAI is a free data retrieval call binding the contract method 0xd295d515.
+//
+// Solidity: function MDA_i() view returns(int256)
+func (_Contract *ContractCaller) MDAI(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "MDA_i")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// MDAI is a free data retrieval call binding the contract method 0xd295d515.
+//
+// Solidity: function MDA_i() view returns(int256)
+func (_Contract *ContractSession) MDAI() (*big.Int, error) {
+	return _Contract.Contract.MDAI(&_Contract.CallOpts)
+}
+
+// MDAI is a free data retrieval call binding the contract method 0xd295d515.
+//
+// Solidity: function MDA_i() view returns(int256)
+func (_Contract *ContractCallerSession) MDAI() (*big.Int, error) {
+	return _Contract.Contract.MDAI(&_Contract.CallOpts)
+}
+
+// A is a free data retrieval call binding the contract method 0x0dbe671f.
+//
+// Solidity: function a() view returns(int256)
+func (_Contract *ContractCaller) A(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "a")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// A is a free data retrieval call binding the contract method 0x0dbe671f.
+//
+// Solidity: function a() view returns(int256)
+func (_Contract *ContractSession) A() (*big.Int, error) {
+	return _Contract.Contract.A(&_Contract.CallOpts)
+}
+
+// A is a free data retrieval call binding the contract method 0x0dbe671f.
+//
+// Solidity: function a() view returns(int256)
+func (_Contract *ContractCallerSession) A() (*big.Int, error) {
+	return _Contract.Contract.A(&_Contract.CallOpts)
+}
+
+// B is a free data retrieval call binding the contract method 0x4df7e3d0.
+//
+// Solidity: function b() view returns(int256)
+func (_Contract *ContractCaller) B(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "b")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// B is a free data retrieval call binding the contract method 0x4df7e3d0.
+//
+// Solidity: function b() view returns(int256)
+func (_Contract *ContractSession) B() (*big.Int, error) {
+	return _Contract.Contract.B(&_Contract.CallOpts)
+}
+
+// B is a free data retrieval call binding the contract method 0x4df7e3d0.
+//
+// Solidity: function b() view returns(int256)
+func (_Contract *ContractCallerSession) B() (*big.Int, error) {
+	return _Contract.Contract.B(&_Contract.CallOpts)
+}
+
+// ModInverse is a free data retrieval call binding the contract method 0x0ebe60cb.
+//
+// Solidity: function modInverse(uint256 r) view returns(uint256)
+func (_Contract *ContractCaller) ModInverse(opts *bind.CallOpts, r *big.Int) (*big.Int, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "modInverse", r)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// ModInverse is a free data retrieval call binding the contract method 0x0ebe60cb.
+//
+// Solidity: function modInverse(uint256 r) view returns(uint256)
+func (_Contract *ContractSession) ModInverse(r *big.Int) (*big.Int, error) {
+	return _Contract.Contract.ModInverse(&_Contract.CallOpts, r)
+}
+
+// ModInverse is a free data retrieval call binding the contract method 0x0ebe60cb.
+//
+// Solidity: function modInverse(uint256 r) view returns(uint256)
+func (_Contract *ContractCallerSession) ModInverse(r *big.Int) (*big.Int, error) {
+	return _Contract.Contract.ModInverse(&_Contract.CallOpts, r)
+}
+
+// PrecomputeLagCoef is a free data retrieval call binding the contract method 0x9cfcf711.
+//
+// Solidity: function precomputeLagCoef(uint256[] I) view returns(uint256[])
+func (_Contract *ContractCaller) PrecomputeLagCoef(opts *bind.CallOpts, I []*big.Int) ([]*big.Int, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "precomputeLagCoef", I)
+
+	if err != nil {
+		return *new([]*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
+
+	return out0, err
+
+}
+
+// PrecomputeLagCoef is a free data retrieval call binding the contract method 0x9cfcf711.
+//
+// Solidity: function precomputeLagCoef(uint256[] I) view returns(uint256[])
+func (_Contract *ContractSession) PrecomputeLagCoef(I []*big.Int) ([]*big.Int, error) {
+	return _Contract.Contract.PrecomputeLagCoef(&_Contract.CallOpts, I)
+}
+
+// PrecomputeLagCoef is a free data retrieval call binding the contract method 0x9cfcf711.
+//
+// Solidity: function precomputeLagCoef(uint256[] I) view returns(uint256[])
+func (_Contract *ContractCallerSession) PrecomputeLagCoef(I []*big.Int) ([]*big.Int, error) {
+	return _Contract.Contract.PrecomputeLagCoef(&_Contract.CallOpts, I)
+}
+
+// Recon is a free data retrieval call binding the contract method 0xc39fd46d.
+//
+// Solidity: function recon(uint256[] I, uint256[] shares) view returns(uint256)
+func (_Contract *ContractCaller) Recon(opts *bind.CallOpts, I []*big.Int, shares []*big.Int) (*big.Int, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "recon", I, shares)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// Recon is a free data retrieval call binding the contract method 0xc39fd46d.
+//
+// Solidity: function recon(uint256[] I, uint256[] shares) view returns(uint256)
+func (_Contract *ContractSession) Recon(I []*big.Int, shares []*big.Int) (*big.Int, error) {
+	return _Contract.Contract.Recon(&_Contract.CallOpts, I, shares)
+}
+
+// Recon is a free data retrieval call binding the contract method 0xc39fd46d.
+//
+// Solidity: function recon(uint256[] I, uint256[] shares) view returns(uint256)
+func (_Contract *ContractCallerSession) Recon(I []*big.Int, shares []*big.Int) (*big.Int, error) {
+	return _Contract.Contract.Recon(&_Contract.CallOpts, I, shares)
+}
+
+// ReconG1 is a free data retrieval call binding the contract method 0xa25702a6.
+//
+// Solidity: function reconG1(uint256[] I, (uint256,uint256)[] shares) view returns((uint256,uint256))
+func (_Contract *ContractCaller) ReconG1(opts *bind.CallOpts, I []*big.Int, shares []VerificationG1Point) (VerificationG1Point, error) {
+	var out []interface{}
+	err := _Contract.contract.Call(opts, &out, "reconG1", I, shares)
+
+	if err != nil {
+		return *new(VerificationG1Point), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(VerificationG1Point)).(*VerificationG1Point)
+
+	return out0, err
+
+}
+
+// ReconG1 is a free data retrieval call binding the contract method 0xa25702a6.
+//
+// Solidity: function reconG1(uint256[] I, (uint256,uint256)[] shares) view returns((uint256,uint256))
+func (_Contract *ContractSession) ReconG1(I []*big.Int, shares []VerificationG1Point) (VerificationG1Point, error) {
+	return _Contract.Contract.ReconG1(&_Contract.CallOpts, I, shares)
+}
+
+// ReconG1 is a free data retrieval call binding the contract method 0xa25702a6.
+//
+// Solidity: function reconG1(uint256[] I, (uint256,uint256)[] shares) view returns((uint256,uint256))
+func (_Contract *ContractCallerSession) ReconG1(I []*big.Int, shares []VerificationG1Point) (VerificationG1Point, error) {
+	return _Contract.Contract.ReconG1(&_Contract.CallOpts, I, shares)
+}
+
+// AIGCForen is a paid mutator transaction binding the contract method 0x4bb1b897.
+//
+// Solidity: function AIGCForen((uint256,uint256) pip, (uint256,uint256) sigma, (uint256[2],uint256[2]) u2, uint256 exp) payable returns(bool)
+func (_Contract *ContractTransactor) AIGCForen(opts *bind.TransactOpts, pip VerificationG1Point, sigma VerificationG1Point, u2 VerificationG2Point, exp *big.Int) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "AIGCForen", pip, sigma, u2, exp)
+}
+
+// AIGCForen is a paid mutator transaction binding the contract method 0x4bb1b897.
+//
+// Solidity: function AIGCForen((uint256,uint256) pip, (uint256,uint256) sigma, (uint256[2],uint256[2]) u2, uint256 exp) payable returns(bool)
+func (_Contract *ContractSession) AIGCForen(pip VerificationG1Point, sigma VerificationG1Point, u2 VerificationG2Point, exp *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.AIGCForen(&_Contract.TransactOpts, pip, sigma, u2, exp)
+}
+
+// AIGCForen is a paid mutator transaction binding the contract method 0x4bb1b897.
+//
+// Solidity: function AIGCForen((uint256,uint256) pip, (uint256,uint256) sigma, (uint256[2],uint256[2]) u2, uint256 exp) payable returns(bool)
+func (_Contract *ContractTransactorSession) AIGCForen(pip VerificationG1Point, sigma VerificationG1Point, u2 VerificationG2Point, exp *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.AIGCForen(&_Contract.TransactOpts, pip, sigma, u2, exp)
+}
+
+// AIGCReg is a paid mutator transaction binding the contract method 0x95943060.
+//
+// Solidity: function AIGCReg((uint256,uint256)[] sigmaShares, (uint256[2],uint256[2])[] cpk2Shares, (uint256[2],uint256[2]) cpk2, (uint256,uint256) req, (uint256,uint256) sigma, (uint256,uint256) hashPointG1) payable returns()
+func (_Contract *ContractTransactor) AIGCReg(opts *bind.TransactOpts, sigmaShares []VerificationG1Point, cpk2Shares []VerificationG2Point, cpk2 VerificationG2Point, req VerificationG1Point, sigma VerificationG1Point, hashPointG1 VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "AIGCReg", sigmaShares, cpk2Shares, cpk2, req, sigma, hashPointG1)
+}
+
+// AIGCReg is a paid mutator transaction binding the contract method 0x95943060.
+//
+// Solidity: function AIGCReg((uint256,uint256)[] sigmaShares, (uint256[2],uint256[2])[] cpk2Shares, (uint256[2],uint256[2]) cpk2, (uint256,uint256) req, (uint256,uint256) sigma, (uint256,uint256) hashPointG1) payable returns()
+func (_Contract *ContractSession) AIGCReg(sigmaShares []VerificationG1Point, cpk2Shares []VerificationG2Point, cpk2 VerificationG2Point, req VerificationG1Point, sigma VerificationG1Point, hashPointG1 VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.AIGCReg(&_Contract.TransactOpts, sigmaShares, cpk2Shares, cpk2, req, sigma, hashPointG1)
+}
+
+// AIGCReg is a paid mutator transaction binding the contract method 0x95943060.
+//
+// Solidity: function AIGCReg((uint256,uint256)[] sigmaShares, (uint256[2],uint256[2])[] cpk2Shares, (uint256[2],uint256[2]) cpk2, (uint256,uint256) req, (uint256,uint256) sigma, (uint256,uint256) hashPointG1) payable returns()
+func (_Contract *ContractTransactorSession) AIGCReg(sigmaShares []VerificationG1Point, cpk2Shares []VerificationG2Point, cpk2 VerificationG2Point, req VerificationG1Point, sigma VerificationG1Point, hashPointG1 VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.AIGCReg(&_Contract.TransactOpts, sigmaShares, cpk2Shares, cpk2, req, sigma, hashPointG1)
+}
+
+// AIGCReq is a paid mutator transaction binding the contract method 0x74c7cddb.
+//
+// Solidity: function AIGCReq((uint256,uint256) hashPointG1, (uint256,uint256) req2, (uint256,uint256) T, uint256 S, (uint256[2],uint256[2])[] cpk2Shares, (uint256,uint256)[] K) payable returns()
+func (_Contract *ContractTransactor) AIGCReq(opts *bind.TransactOpts, hashPointG1 VerificationG1Point, req2 VerificationG1Point, T VerificationG1Point, S *big.Int, cpk2Shares []VerificationG2Point, K []VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "AIGCReq", hashPointG1, req2, T, S, cpk2Shares, K)
+}
+
+// AIGCReq is a paid mutator transaction binding the contract method 0x74c7cddb.
+//
+// Solidity: function AIGCReq((uint256,uint256) hashPointG1, (uint256,uint256) req2, (uint256,uint256) T, uint256 S, (uint256[2],uint256[2])[] cpk2Shares, (uint256,uint256)[] K) payable returns()
+func (_Contract *ContractSession) AIGCReq(hashPointG1 VerificationG1Point, req2 VerificationG1Point, T VerificationG1Point, S *big.Int, cpk2Shares []VerificationG2Point, K []VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.AIGCReq(&_Contract.TransactOpts, hashPointG1, req2, T, S, cpk2Shares, K)
+}
+
+// AIGCReq is a paid mutator transaction binding the contract method 0x74c7cddb.
+//
+// Solidity: function AIGCReq((uint256,uint256) hashPointG1, (uint256,uint256) req2, (uint256,uint256) T, uint256 S, (uint256[2],uint256[2])[] cpk2Shares, (uint256,uint256)[] K) payable returns()
+func (_Contract *ContractTransactorSession) AIGCReq(hashPointG1 VerificationG1Point, req2 VerificationG1Point, T VerificationG1Point, S *big.Int, cpk2Shares []VerificationG2Point, K []VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.AIGCReq(&_Contract.TransactOpts, hashPointG1, req2, T, S, cpk2Shares, K)
+}
+
+// CopyReq is a paid mutator transaction binding the contract method 0xce17d983.
+//
+// Solidity: function CopyReq((uint256,uint256) hashPointG1, (uint256,uint256) req, (uint256,uint256) T, uint256 S) payable returns(bool)
+func (_Contract *ContractTransactor) CopyReq(opts *bind.TransactOpts, hashPointG1 VerificationG1Point, req VerificationG1Point, T VerificationG1Point, S *big.Int) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "CopyReq", hashPointG1, req, T, S)
+}
+
+// CopyReq is a paid mutator transaction binding the contract method 0xce17d983.
+//
+// Solidity: function CopyReq((uint256,uint256) hashPointG1, (uint256,uint256) req, (uint256,uint256) T, uint256 S) payable returns(bool)
+func (_Contract *ContractSession) CopyReq(hashPointG1 VerificationG1Point, req VerificationG1Point, T VerificationG1Point, S *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.CopyReq(&_Contract.TransactOpts, hashPointG1, req, T, S)
+}
+
+// CopyReq is a paid mutator transaction binding the contract method 0xce17d983.
+//
+// Solidity: function CopyReq((uint256,uint256) hashPointG1, (uint256,uint256) req, (uint256,uint256) T, uint256 S) payable returns(bool)
+func (_Contract *ContractTransactorSession) CopyReq(hashPointG1 VerificationG1Point, req VerificationG1Point, T VerificationG1Point, S *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.CopyReq(&_Contract.TransactOpts, hashPointG1, req, T, S)
+}
+
+// Trace is a paid mutator transaction binding the contract method 0xb1d03cd0.
+//
+// Solidity: function Trace((uint256,uint256) Cpk1, uint256[] sxShares, uint256[] I) payable returns(uint256)
+func (_Contract *ContractTransactor) Trace(opts *bind.TransactOpts, Cpk1 VerificationG1Point, sxShares []*big.Int, I []*big.Int) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "Trace", Cpk1, sxShares, I)
+}
+
+// Trace is a paid mutator transaction binding the contract method 0xb1d03cd0.
+//
+// Solidity: function Trace((uint256,uint256) Cpk1, uint256[] sxShares, uint256[] I) payable returns(uint256)
+func (_Contract *ContractSession) Trace(Cpk1 VerificationG1Point, sxShares []*big.Int, I []*big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.Trace(&_Contract.TransactOpts, Cpk1, sxShares, I)
+}
+
+// Trace is a paid mutator transaction binding the contract method 0xb1d03cd0.
+//
+// Solidity: function Trace((uint256,uint256) Cpk1, uint256[] sxShares, uint256[] I) payable returns(uint256)
+func (_Contract *ContractTransactorSession) Trace(Cpk1 VerificationG1Point, sxShares []*big.Int, I []*big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.Trace(&_Contract.TransactOpts, Cpk1, sxShares, I)
+}
+
+// TraceVer is a paid mutator transaction binding the contract method 0xc50d9ab7.
+//
+// Solidity: function TraceVer((uint256,uint256)[] piShares, uint256 sx, (uint256,uint256) Cpk1, uint256[] I) payable returns(bool)
+func (_Contract *ContractTransactor) TraceVer(opts *bind.TransactOpts, piShares []VerificationG1Point, sx *big.Int, Cpk1 VerificationG1Point, I []*big.Int) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "TraceVer", piShares, sx, Cpk1, I)
+}
+
+// TraceVer is a paid mutator transaction binding the contract method 0xc50d9ab7.
+//
+// Solidity: function TraceVer((uint256,uint256)[] piShares, uint256 sx, (uint256,uint256) Cpk1, uint256[] I) payable returns(bool)
+func (_Contract *ContractSession) TraceVer(piShares []VerificationG1Point, sx *big.Int, Cpk1 VerificationG1Point, I []*big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.TraceVer(&_Contract.TransactOpts, piShares, sx, Cpk1, I)
+}
+
+// TraceVer is a paid mutator transaction binding the contract method 0xc50d9ab7.
+//
+// Solidity: function TraceVer((uint256,uint256)[] piShares, uint256 sx, (uint256,uint256) Cpk1, uint256[] I) payable returns(bool)
+func (_Contract *ContractTransactorSession) TraceVer(piShares []VerificationG1Point, sx *big.Int, Cpk1 VerificationG1Point, I []*big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.TraceVer(&_Contract.TransactOpts, piShares, sx, Cpk1, I)
+}
+
+// UploadCommitment is a paid mutator transaction binding the contract method 0x7fe5c78b.
+//
+// Solidity: function UploadCommitment((uint256,uint256)[] commitment) payable returns()
+func (_Contract *ContractTransactor) UploadCommitment(opts *bind.TransactOpts, commitment []VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "UploadCommitment", commitment)
+}
+
+// UploadCommitment is a paid mutator transaction binding the contract method 0x7fe5c78b.
+//
+// Solidity: function UploadCommitment((uint256,uint256)[] commitment) payable returns()
+func (_Contract *ContractSession) UploadCommitment(commitment []VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.UploadCommitment(&_Contract.TransactOpts, commitment)
+}
+
+// UploadCommitment is a paid mutator transaction binding the contract method 0x7fe5c78b.
+//
+// Solidity: function UploadCommitment((uint256,uint256)[] commitment) payable returns()
+func (_Contract *ContractTransactorSession) UploadCommitment(commitment []VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.UploadCommitment(&_Contract.TransactOpts, commitment)
+}
+
+// UploadGPar is a paid mutator transaction binding the contract method 0xe6f93b22.
+//
+// Solidity: function UploadGPar(uint256 n, uint256 t) payable returns()
+func (_Contract *ContractTransactor) UploadGPar(opts *bind.TransactOpts, n *big.Int, t *big.Int) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "UploadGPar", n, t)
+}
+
+// UploadGPar is a paid mutator transaction binding the contract method 0xe6f93b22.
+//
+// Solidity: function UploadGPar(uint256 n, uint256 t) payable returns()
+func (_Contract *ContractSession) UploadGPar(n *big.Int, t *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.UploadGPar(&_Contract.TransactOpts, n, t)
+}
+
+// UploadGPar is a paid mutator transaction binding the contract method 0xe6f93b22.
+//
+// Solidity: function UploadGPar(uint256 n, uint256 t) payable returns()
+func (_Contract *ContractTransactorSession) UploadGPar(n *big.Int, t *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.UploadGPar(&_Contract.TransactOpts, n, t)
+}
+
+// UploadProof is a paid mutator transaction binding the contract method 0xf73a9452.
+//
+// Solidity: function UploadProof((uint256,uint256) a1, (uint256,uint256) a2, uint256 c, uint256 z) payable returns()
+func (_Contract *ContractTransactor) UploadProof(opts *bind.TransactOpts, a1 VerificationG1Point, a2 VerificationG1Point, c *big.Int, z *big.Int) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "UploadProof", a1, a2, c, z)
+}
+
+// UploadProof is a paid mutator transaction binding the contract method 0xf73a9452.
+//
+// Solidity: function UploadProof((uint256,uint256) a1, (uint256,uint256) a2, uint256 c, uint256 z) payable returns()
+func (_Contract *ContractSession) UploadProof(a1 VerificationG1Point, a2 VerificationG1Point, c *big.Int, z *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.UploadProof(&_Contract.TransactOpts, a1, a2, c, z)
+}
+
+// UploadProof is a paid mutator transaction binding the contract method 0xf73a9452.
+//
+// Solidity: function UploadProof((uint256,uint256) a1, (uint256,uint256) a2, uint256 c, uint256 z) payable returns()
+func (_Contract *ContractTransactorSession) UploadProof(a1 VerificationG1Point, a2 VerificationG1Point, c *big.Int, z *big.Int) (*types.Transaction, error) {
+	return _Contract.Contract.UploadProof(&_Contract.TransactOpts, a1, a2, c, z)
+}
+
+// UploadTransfer is a paid mutator transaction binding the contract method 0xcd223d75.
+//
+// Solidity: function UploadTransfer((uint256,uint256) nta, (uint256,uint256) reqp, (uint256,uint256) commitment0) payable returns()
+func (_Contract *ContractTransactor) UploadTransfer(opts *bind.TransactOpts, nta VerificationG1Point, reqp VerificationG1Point, commitment0 VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "UploadTransfer", nta, reqp, commitment0)
+}
+
+// UploadTransfer is a paid mutator transaction binding the contract method 0xcd223d75.
+//
+// Solidity: function UploadTransfer((uint256,uint256) nta, (uint256,uint256) reqp, (uint256,uint256) commitment0) payable returns()
+func (_Contract *ContractSession) UploadTransfer(nta VerificationG1Point, reqp VerificationG1Point, commitment0 VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.UploadTransfer(&_Contract.TransactOpts, nta, reqp, commitment0)
+}
+
+// UploadTransfer is a paid mutator transaction binding the contract method 0xcd223d75.
+//
+// Solidity: function UploadTransfer((uint256,uint256) nta, (uint256,uint256) reqp, (uint256,uint256) commitment0) payable returns()
+func (_Contract *ContractTransactorSession) UploadTransfer(nta VerificationG1Point, reqp VerificationG1Point, commitment0 VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.UploadTransfer(&_Contract.TransactOpts, nta, reqp, commitment0)
+}
+
+// VerifyTransfer is a paid mutator transaction binding the contract method 0x8cd01902.
+//
+// Solidity: function VerifyTransfer((uint256,uint256) hashPointG1, (uint256,uint256) T, uint256 S, (uint256,uint256) X, (uint256,uint256) g2k) payable returns(bool)
+func (_Contract *ContractTransactor) VerifyTransfer(opts *bind.TransactOpts, hashPointG1 VerificationG1Point, T VerificationG1Point, S *big.Int, X VerificationG1Point, g2k VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "VerifyTransfer", hashPointG1, T, S, X, g2k)
+}
+
+// VerifyTransfer is a paid mutator transaction binding the contract method 0x8cd01902.
+//
+// Solidity: function VerifyTransfer((uint256,uint256) hashPointG1, (uint256,uint256) T, uint256 S, (uint256,uint256) X, (uint256,uint256) g2k) payable returns(bool)
+func (_Contract *ContractSession) VerifyTransfer(hashPointG1 VerificationG1Point, T VerificationG1Point, S *big.Int, X VerificationG1Point, g2k VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.VerifyTransfer(&_Contract.TransactOpts, hashPointG1, T, S, X, g2k)
+}
+
+// VerifyTransfer is a paid mutator transaction binding the contract method 0x8cd01902.
+//
+// Solidity: function VerifyTransfer((uint256,uint256) hashPointG1, (uint256,uint256) T, uint256 S, (uint256,uint256) X, (uint256,uint256) g2k) payable returns(bool)
+func (_Contract *ContractTransactorSession) VerifyTransfer(hashPointG1 VerificationG1Point, T VerificationG1Point, S *big.Int, X VerificationG1Point, g2k VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.VerifyTransfer(&_Contract.TransactOpts, hashPointG1, T, S, X, g2k)
+}
+
+// Negate is a paid mutator transaction binding the contract method 0xfb6b9e9a.
+//
+// Solidity: function negate((uint256,uint256) p) payable returns((uint256,uint256))
+func (_Contract *ContractTransactor) Negate(opts *bind.TransactOpts, p VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "negate", p)
+}
+
+// Negate is a paid mutator transaction binding the contract method 0xfb6b9e9a.
+//
+// Solidity: function negate((uint256,uint256) p) payable returns((uint256,uint256))
+func (_Contract *ContractSession) Negate(p VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.Negate(&_Contract.TransactOpts, p)
+}
+
+// Negate is a paid mutator transaction binding the contract method 0xfb6b9e9a.
+//
+// Solidity: function negate((uint256,uint256) p) payable returns((uint256,uint256))
+func (_Contract *ContractTransactorSession) Negate(p VerificationG1Point) (*types.Transaction, error) {
+	return _Contract.Contract.Negate(&_Contract.TransactOpts, p)
+}
